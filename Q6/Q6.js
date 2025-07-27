@@ -14,3 +14,24 @@ var reverseWords = function(s) {
     let res = arr.filter((item) => item != '')
     return res.join(' ')
 };
+
+// soultion 2
+var reverseWords = function(s) {
+    let arr = s.split(' ') 
+    let res = '';
+
+    let end = arr.length - 1;
+    let ind = 0;
+    while (end >= 0) {
+        if (arr[end] != '') {
+            if (ind != 0) {
+                res += ' '
+            }
+            res += arr[end];
+            ind += 1;
+        }
+        end -= 1;
+    }
+
+    return res;
+};
